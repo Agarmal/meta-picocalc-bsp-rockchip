@@ -1,0 +1,51 @@
+header:
+  version: 14
+
+machine: luckfox-lyra
+
+repos:
+  poky:
+    url: "https://git.yoctoproject.org/poky"
+    commit: db04028d9070f05c3b5dee728473fb234bd24f05
+    layers:
+      meta:
+      meta-poky:
+      meta-yocto-bsp:
+  meta-openembedded:
+    url: https://github.com/openembedded/meta-openembedded.git
+    commit: dca497d728792e3cb655c78455c2d649af312ce8
+    layers:
+      meta-oe:
+      meta-python:
+      meta-networking:
+      meta-filesystems:
+      meta-multimedia:
+  meta-arm:
+    url: https://git.yoctoproject.org/meta-arm
+    commit: 2de04c3d31e119d4bedbea24b9c63a8c113a1ce3
+    layers:
+      meta-arm-bsp:
+      meta-arm-toolchain:
+      meta-arm:
+  meta-rockchip:
+    url: https://github.com/JeffyCN/meta-rockchip.git
+    commit: 71aa531a2018724a713c9587059bc53fcbd05a23
+    layers:
+      .:
+  meta-rtlwifi:
+    url: https://github.com/EmbeddedAndroid/meta-rtlwifi.git
+    commit: 6925889b7c08c46ea4f8c6fcda43b009d8739b11
+    layers:
+      .:
+
+local_conf_header:
+  image: |
+    PICOCALC_DRIVERS = "\
+      picocalc-drivers-lcd-drm \
+      picocalc-drivers-snd-pwm \
+      picocalc-drivers-snd-softpwm \
+      picocalc-drivers-mfd \
+      picocalc-dt-overlays \
+    "
+
+    CORE_IMAGE_EXTRA_INSTALL += " ${PICOCALC_DRIVERS} kernel-modules "
