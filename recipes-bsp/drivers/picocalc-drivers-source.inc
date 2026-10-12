@@ -1,4 +1,5 @@
 PV = "1.0+git${SRCPV}"
+SRC_URI = "git://github.com/Calculinux/picocalc-drivers.git;protocol=https;nobranch=1"
 # main at the merge of the M0 audio rework (#37), on top of M0 audio (#28/#29),
 # CMA disabled (#30), PL330 mcbufsz for SPI fb without CMA (#31), the opt-in
 # lcd-spi-100mhz overlay (#32) and the keyboard mouse-mode fix (#33).
