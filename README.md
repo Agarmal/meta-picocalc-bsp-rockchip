@@ -6,7 +6,7 @@ Add the BSP to your kas file
 repos:
   meta-picocalc-bsp-rockchip:
     url: "https://github.com/Calculinux/meta-picocalc-bsp-rockchip.git"
-    refspec: "master"
+    refspec: "main"
     layers:
       .:
 ```
