@@ -1,4 +1,4 @@
-Generic BSP layer for the LyraCalc on PicoCalc hardware.
+Generic BSP layer for the Luckfox Lyra in PicoCalc hardware.
 
 # How to use
 Add the BSP to your kas file
