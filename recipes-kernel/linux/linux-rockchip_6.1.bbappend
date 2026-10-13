@@ -2,7 +2,11 @@ FILESEXTRAPATHS:prepend := "${THISDIR}/files:"
 
 LICENSE = "GPL-2.0-only"
 
-SRCREV = "31300da39d37ec56b3df205519aaa9eb943fccfb"
+# Bump PR with every kernel change: the package version is otherwise a constant
+# 6.1-r0 and opkg sees a rebuilt kernel as already installed.
+PR = "r5"
+
+SRCREV = "cba70010f688abfb03ab4fad951f08dd188bc3f2"
 
 # Kernel config fragments: all .cfg files in files/config/ are auto-included.
 python __anonymous() {
@@ -45,7 +49,6 @@ SRC_URI = " \
     file://depmod-skip-when-echo.patch \
     file://btrfs-print-tree-fix-block-group-tree-string.patch \
     file://spi-rockchip-raise-max-sclk-to-100mhz.patch \
-    file://spi-rockchip-tx-dma-burst-from-dt.patch \
     file://lib-fonts-add-terminus-6x12.patch \
     file://btrtl-firmware-format-v2-support.patch \
 "
